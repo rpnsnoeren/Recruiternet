@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RecruiterNet - Platform voor Freelance Recruiters</title>
+
+        <!-- Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Styles -->
+        <link href="/public/css/style.css" rel="stylesheet" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Alpine.js -->
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
+    </head>
+    <body class="bg-gray-50" x-data="{ mobileMenuOpen: false }">
+        <!-- Moderne Navbar -->
+        <nav
+            class="fixed w-full z-50 bg-white border-b border-gray-100 shadow-sm"
+        >
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="/" class="text-2xl font-bold text-blue-600">
+                            RecruiterNet
+                        </a>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex md:items-center md:space-x-10">
+                        <a
+                            href="/about.html"
+                            class="text-gray-600 hover:text-blue-600 transition-colors"
+                            >Over Ons</a
+                        >
+                        <a
+                            href="/features.html"
+                            class="text-gray-600 hover:text-blue-600 transition-colors"
+                            >Features</a
+                        >
+                        <a
+                            href="/membership.html"
+                            class="text-gray-600 hover:text-blue-600 transition-colors"
+                            >Lidmaatschap</a
+                        >
+                        <a
+                            href="/contact.html"
+                            class="ml-8 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                        >
+                            Contact
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="flex items-center md:hidden">
+                        <button
+                            @click="mobileMenuOpen = !mobileMenuOpen"
+                            type="button"
+                            class="text-gray-500 hover:text-gray-600 focus:outline-none"
+                        >
+                            <span class="sr-only">Open menu</span>
+                            <svg
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Panel -->
+        <div
+            x-show="mobileMenuOpen"
+            @click.away="mobileMenuOpen = false"
+            class="absolute top-16 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+        >
+            <div
+                class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50"
+            >
+                <div class="pt-5 pb-6 px-5 space-y-6">
+                    <div class="space-y-3">
+                        <a
+                            href="/about.html"
+                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                            >Over Ons</a
+                        >
+                        <a
+                            href="/features.html"
+                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                            >Features</a
+                        >
+                        <a
+                            href="/membership.html"
+                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                            >Lidmaatschap</a
+                        >
+                        <a
+                            href="/contact.html"
+                            class="block w-full px-3 py-2 rounded-md text-base font-medium text-center text-white bg-blue-600 hover:bg-blue-700"
+                            >Contact</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section
+            class="w-full pt-24 bg-gradient-to-br from-blue-50 via-white to-blue-50"
+        >
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+                <div
+                    class="flex flex-col lg:flex-row items-center justify-between w-full gap-16"
+                >
+                    <!-- Text Content - Links -->
+                    <div class="w-full lg:w-1/2 text-center lg:text-left">
+                        <h1
+                            class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
+                        >
+                            <span class="block">Samen Sterker</span>
+                            <span class="block">in</span>
+                            <span class="block text-blue-600">Recruitment</span>
+                        </h1>
+                        <p
+                            class="mt-6 text-base text-gray-500 sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0"
+                        >
+                            Het eerste Nederlandse platform waar freelance
+                            recruiters samen kunnen werken, kennis delen en
+                            groeien. Word onderdeel van de toekomst van
+                            recruitment.
+                        </p>
+                        <div class="mt-10">
+                            <div
+                                class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
+                            >
+                                <a
+                                    href="/membership.html"
+                                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+                                >
+                                    Word Early Adopter
+                                </a>
+                                <a
+                                    href="/features.html"
+                                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-blue-200 text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-colors duration-200"
+                                >
+                                    Ontdek Features
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Container - Rechts -->
+                    <div class="w-full lg:w-1/2">
+                        <div class="relative w-full h-full">
+                            <img
+                                class="w-full h-auto object-cover rounded-lg shadow-lg"
+                                src="/images/napkin-selection.png"
+                                alt="Platform preview"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="bg-white">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <div class="max-w-screen-md mb-8 lg:mb-16">
+                    <h2
+                        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900"
+                    >
+                        Waarom RecruiterNet?
+                    </h2>
+                    <p class="font-light text-gray-500 sm:text-xl">
+                        Het eerste Nederlandse platform waar freelance
+                        recruiters samen kunnen werken, kennis delen en groeien.
+                    </p>
+                </div>
+                <div
+                    class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0"
+                >
+                    <!-- Feature 1: Netwerk -->
+                    <div>
+                        <div
+                            class="flex justify-center items-center mb-4 w-10 h-10 bg-blue-100 rounded lg:h-16 lg:w-16"
+                        >
+                            <svg
+                                class="w-5 h-5 text-blue-600 lg:w-8 lg:h-8"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold text-gray-900">
+                            Netwerk van Professionals
+                        </h3>
+                        <ul role="list" class="my-6 lg:mb-0 space-y-4">
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-blue-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Verbind met andere freelance
+                                    recruiters</span
+                                >
+                            </li>
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-blue-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Deel kennis en ervaring</span
+                                >
+                            </li>
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-blue-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Groei je professionele netwerk</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 2: Projectdeling -->
+                    <div>
+                        <div
+                            class="flex justify-center items-center mb-4 w-10 h-10 bg-purple-100 rounded lg:h-16 lg:w-16"
+                        >
+                            <svg
+                                class="w-5 h-5 text-purple-600 lg:w-8 lg:h-8"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold text-gray-900">
+                            Projectdeling
+                        </h3>
+                        <ul role="list" class="my-6 lg:mb-0 space-y-4">
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-purple-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Deel projecten en vacatures</span
+                                >
+                            </li>
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-purple-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Profiteer van gezamenlijke kansen</span
+                                >
+                            </li>
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-purple-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Werk samen aan projecten</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 3: Kennisdeling -->
+                    <div>
+                        <div
+                            class="flex justify-center items-center mb-4 w-10 h-10 bg-teal-100 rounded lg:h-16 lg:w-16"
+                        >
+                            <svg
+                                class="w-5 h-5 text-teal-600 lg:w-8 lg:h-8"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold text-gray-900">
+                            Kennisdeling
+                        </h3>
+                        <ul role="list" class="my-6 lg:mb-0 space-y-4">
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-teal-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Deel best practices</span
+                                >
+                            </li>
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-teal-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Leer van ervaren recruiters</span
+                                >
+                            </li>
+                            <li class="flex space-x-2.5">
+                                <svg
+                                    class="flex-shrink-0 w-5 h-5 text-teal-600"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span class="leading-tight text-gray-500"
+                                    >Blijf up-to-date met trends</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Block met Foto -->
+        <section class="bg-white">
+            <div
+                class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+            >
+                <div class="font-light text-gray-500 sm:text-lg">
+                    <h2
+                        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900"
+                    >
+                        Bevordering van samenwerking binnen freelance
+                        gemeenschap
+                    </h2>
+                    <p class="mb-4">
+                        Freelancers kunnen onderling samenwerken en ervaringen
+                        delen op ons platform. We creëren een omgeving waar
+                        professionals elkaar kunnen versterken en ondersteunen.
+                    </p>
+                    <p>
+                        Het platform faciliteert de uitwisseling van
+                        vaardigheden en expertise, wat leidt tot betere
+                        resultaten voor iedereen.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 gap-4 mt-8 lg:mt-0">
+                    <img
+                        class="w-full rounded-lg shadow-lg"
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                        alt="Freelancers die samenwerken"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- Kernwaarden Section -->
+        <section class="bg-gray-50 py-24">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <div class="max-w-screen-md mb-8 lg:mb-16">
+                    <h2
+                        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900"
+                    >
+                        Onze Kernwaarden
+                    </h2>
+                    <p class="text-gray-500 sm:text-xl">
+                        We geloven in de kracht van samenwerking en het delen
+                        van kennis om de recruitment sector naar een hoger
+                        niveau te tillen.
+                    </p>
+                </div>
+                <div
+                    class="space-y-8 md:grid md:grid-cols-3 md:gap-12 md:space-y-0"
+                >
+                    <!-- Samenwerking -->
+                    <div class="text-center">
+                        <div
+                            class="flex justify-center items-center mx-auto mb-4 w-10 h-10 rounded-lg bg-primary-100 lg:h-16 lg:w-16"
+                        >
+                            <svg
+                                class="w-5 h-5 text-primary-600 lg:w-8 lg:h-8"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Samenwerking</h3>
+                        <p class="text-gray-500">
+                            Samen bereiken we meer. Door krachten te bundelen
+                            creëren we nieuwe mogelijkheden en versterken we
+                            elkaar.
+                        </p>
+                    </div>
+                    <!-- Kennisdeling -->
+                    <div class="text-center">
+                        <div
+                            class="flex justify-center items-center mx-auto mb-4 w-10 h-10 rounded-lg bg-primary-100 lg:h-16 lg:w-16"
+                        >
+                            <svg
+                                class="w-5 h-5 text-primary-600 lg:w-8 lg:h-8"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Kennisdeling</h3>
+                        <p class="text-gray-500">
+                            Door kennis en ervaring te delen, groeien we samen
+                            en blijven we voorop lopen in de veranderende
+                            recruitmentwereld.
+                        </p>
+                    </div>
+                    <!-- Ondersteuning -->
+                    <div class="text-center">
+                        <div
+                            class="flex justify-center items-center mx-auto mb-4 w-10 h-10 rounded-lg bg-primary-100 lg:h-16 lg:w-16"
+                        >
+                            <svg
+                                class="w-5 h-5 text-primary-600 lg:w-8 lg:h-8"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Ondersteuning</h3>
+                        <p class="text-gray-500">
+                            We staan voor elkaar klaar. Met wederzijdse
+                            ondersteuning maken we elkaar sterker en
+                            succesvoller.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Functies Section -->
+        <section class="bg-white">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <div class="max-w-screen-md mb-8 lg:mb-16">
+                    <h2
+                        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900"
+                    >
+                        Platform Functies
+                    </h2>
+                    <p class="text-gray-500 sm:text-xl">
+                        Ontdek alle mogelijkheden die RecruiterNet te bieden
+                        heeft voor freelance recruiters.
+                    </p>
+                </div>
+                <div
+                    class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0"
+                >
+                    <!-- Projectbeheer Kaart -->
+                    <div
+                        class="flex flex-col p-8 mx-auto text-center bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div class="flex justify-center mb-6">
+                            <div class="inline-flex p-4 bg-blue-50 rounded-lg">
+                                <svg
+                                    class="w-12 h-12 text-blue-600"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="mb-4 text-2xl font-semibold text-blue-600">
+                            Projectbeheer
+                        </h3>
+                        <p class="font-light text-gray-500 sm:text-lg mb-6">
+                            Beheer al je recruitment projecten op één plek
+                        </p>
+                        <div class="flex flex-col mt-auto space-y-4">
+                            <ul role="list" class="space-y-4 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-blue-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Vacature tracking</span
+                                    >
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-blue-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Kandidatenbeheer</span
+                                    >
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-blue-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Planning tools</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Kennisplatform Kaart -->
+                    <div
+                        class="flex flex-col p-8 mx-auto text-center bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div class="flex justify-center mb-6">
+                            <div
+                                class="inline-flex p-4 bg-purple-50 rounded-lg"
+                            >
+                                <svg
+                                    class="w-12 h-12 text-purple-600"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="mb-4 text-2xl font-semibold text-purple-600">
+                            Kennisplatform
+                        </h3>
+                        <p class="font-light text-gray-500 sm:text-lg mb-6">
+                            Deel en verzamel waardevolle recruitment kennis
+                        </p>
+                        <div class="flex flex-col mt-auto space-y-4">
+                            <ul role="list" class="space-y-4 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-purple-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Best practices</span
+                                    >
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-purple-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Templates & resources</span
+                                    >
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-purple-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Markt updates</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Netwerk Tools Kaart -->
+                    <div
+                        class="flex flex-col p-8 mx-auto text-center bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div class="flex justify-center mb-6">
+                            <div class="inline-flex p-4 bg-teal-50 rounded-lg">
+                                <svg
+                                    class="w-12 h-12 text-teal-600"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="mb-4 text-2xl font-semibold text-teal-600">
+                            Netwerk Tools
+                        </h3>
+                        <p class="font-light text-gray-500 sm:text-lg mb-6">
+                            Bouw en onderhoud je professionele netwerk
+                        </p>
+                        <div class="flex flex-col mt-auto space-y-4">
+                            <ul role="list" class="space-y-4 text-left">
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-teal-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Messaging systeem</span
+                                    >
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-teal-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Samenwerkingstools</span
+                                    >
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <svg
+                                        class="flex-shrink-0 w-5 h-5 text-teal-600"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <span class="text-gray-500"
+                                        >Profielenbeheer</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flowbite JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    </body>
+</html>
