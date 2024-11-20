@@ -1,11 +1,23 @@
 // Components module
-export async function loadComponent(elementId, componentPath) {
+async function loadComponent(elementId, componentPath) {
     try {
-        const response = await fetch(componentPath);
+        // Bepaal het basis pad voor componenten
+        const basePath = window.location.pathname.includes('/src/') ? '.' : './src';
+        const response = await fetch(`${basePath}/components/${componentPath}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const html = await response.text();
-        document.getElementById(elementId).innerHTML = html;
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.innerHTML = html;
+        } else {
+            console.warn(`Element with id '${elementId}' not found`);
+        }
     } catch (error) {
-        console.error('Error loading component:', error);
+        console.error('Error loading component:', error, 'Path:', componentPath);
     }
 }
 
@@ -18,12 +30,21 @@ function getCurrentPage() {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Load shared components
-    loadComponent('navbar', 'components/navbar.html');
-    loadComponent('footer', 'components/footer.html');
-    
-    // Load page-specific content
-    const currentPage = getCurrentPage();
-    loadComponent('main-content', `components/content/${currentPage}.html`);
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        // Load shared components
+        await loadComponent('navbar', 'navbar.html');
+        await loadComponent('footer', 'footer.html');
+        
+        // Load page-specific content
+        const currentPage = getCurrentPage();
+        await loadComponent('main-content', `content/${currentPage}.html`);
+
+        // Re-initialize Alpine.js after loading components
+        if (window.Alpine) {
+            window.Alpine.initTree(document.body);
+        }
+    } catch (error) {
+        console.error('Error initializing components:', error);
+    }
 }); 
