@@ -1,5 +1,5 @@
-// Function to load components
-async function loadComponent(elementId, componentPath) {
+// Components module
+export async function loadComponent(elementId, componentPath) {
     try {
         const response = await fetch(componentPath);
         const html = await response.text();
@@ -17,13 +17,13 @@ function getCurrentPage() {
     return 'home';
 }
 
-// Load all components when the page loads
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Load shared components
-    loadComponent('navbar', './components/navbar.html');
-    loadComponent('footer', './components/footer.html');
+    loadComponent('navbar', 'components/navbar.html');
+    loadComponent('footer', 'components/footer.html');
     
     // Load page-specific content
     const currentPage = getCurrentPage();
-    loadComponent('main-content', `./components/content/${currentPage}.html`);
+    loadComponent('main-content', `components/content/${currentPage}.html`);
 }); 
