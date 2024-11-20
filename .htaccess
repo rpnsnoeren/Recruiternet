@@ -1,0 +1,7 @@
+# Set correct MIME types
+AddType text/css .css
+AddType text/javascript .js
+AddType text/html .html
+
+# Enable CORS
+Header set Access-Control-Allow-Origin "*" 
