@@ -15,125 +15,244 @@
         <!-- Alpine.js -->
         <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
-    <body class="bg-gray-50" x-data="{ mobileMenuOpen: false }">
-        <!-- Navbar Component -->
+    <body class="bg-gray-50">
+        <!-- Navbar -->
         <div id="navbar"></div>
 
-        <!-- Prijzen Section -->
-        <section class="bg-white pt-32 pb-20">
-            <div class="px-6 mx-auto max-w-screen-xl lg:px-8">
-                <div class="mx-auto max-w-screen-md text-center mb-20">
-                    <h1 class="mb-6 text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl xl:text-6xl">
-                        Word Early Adopter
-                    </h1>
-                    <p class="mb-8 text-gray-600 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
-                        Start vandaag nog met het vergroten van je netwerk en het delen van kennis met andere freelance recruiters.
-                    </p>
+        <!-- Hero Section -->
+        <section class="pt-32 pb-24 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium text-sm mb-6">
+                    Early Bird Korting 🎉
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+                    Word lid van de eerste Nederlandse
+                    <span class="text-blue-600">Freelance Recruiters Community</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Profiteer nu van onze speciale early bird tarieven en word onderdeel van een groeiende community van succesvolle ZZP recruiters
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="early-bird.html" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Schrijf je nu in
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
                 </div>
-                
-                <!-- Pricing Cards -->
-                <div class="grid gap-12 lg:grid-cols-2 max-w-5xl mx-auto">
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-24 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Early Bird Alert -->
+                <div class="max-w-3xl mx-auto mb-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-8 text-white text-center">
+                    <h2 class="text-2xl font-bold mb-4">🎉 Early Bird Aanbieding</h2>
+                    <p class="text-lg mb-4">
+                        Word nu lid en profiteer van 50% korting op je eerste jaar lidmaatschap!
+                    </p>
+                    <div class="text-sm opacity-90">
+                        Aanbieding geldig voor de eerste 50 leden
+                    </div>
+                </div>
+
+                <!-- Pricing Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     <!-- Starter Plan -->
-                    <div class="flex flex-col p-12 mx-auto w-full text-center bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                        <div class="pb-8 mb-8 border-b border-gray-200">
-                            <h3 class="mb-4 text-3xl font-bold">Starter</h3>
-                            <p class="text-gray-600 text-lg mb-6">Perfect voor beginnende ZZP recruiters</p>
-                            <div class="flex justify-center items-baseline">
-                                <span class="text-5xl font-extrabold text-gray-900">€49</span>
-                                <span class="text-gray-600 text-xl ml-2">/maand</span>
+                    <div class="bg-white p-8 rounded-2xl border-2 border-gray-100 hover:border-blue-100 transition-all duration-300 hover:shadow-lg relative flex flex-col">
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-400 mb-4">Starter</h3>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-bold text-gray-900">€25</span>
+                                <span class="text-gray-500 ml-2">/ maand</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-2">
+                                <span class="line-through">€50</span> met Early Bird korting
                             </div>
                         </div>
-                        
-                        <!-- Features list -->
-                        <ul role="list" class="mb-10 space-y-5 text-left">
-                            <li class="flex items-center space-x-4 px-4">
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Toegang tot WhatsApp community</span>
+                                <span>Toegang tot de community</span>
                             </li>
-                            <li class="flex items-center space-x-4 px-4">
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Basis kennisdeling</span>
+                                <span>Basis kennisbank toegang</span>
                             </li>
-                            <li class="flex items-center space-x-4 px-4">
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 <span>Maandelijkse online meetups</span>
                             </li>
                         </ul>
-                        
-                        <!-- CTA Button -->
-                        <a href="#" class="mt-auto text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-lg px-8 py-4 text-center transition-colors">
-                            Start nu
+                        <a href="early-bird.html" class="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-base font-medium rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-all duration-200">
+                            Start als Starter
                         </a>
                     </div>
-                    
+
                     <!-- Pro Plan -->
-                    <div class="flex flex-col p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow">
-                        <h3 class="mb-4 text-2xl font-semibold">Pro</h3>
-                        <p class="font-light text-gray-500 sm:text-lg">Voor de ervaren ZZP recruiter</p>
-                        <div class="flex justify-center items-baseline my-8">
-                            <span class="mr-2 text-5xl font-extrabold">€99</span>
-                            <span class="text-gray-500">/maand</span>
+                    <div class="bg-white p-8 rounded-2xl border-2 border-blue-600 hover:border-blue-700 transition-all duration-300 hover:shadow-xl relative flex flex-col">
+                        <div class="absolute top-0 right-8 transform -translate-y-1/2">
+                            <span class="inline-flex items-center px-4 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+                                Populair
+                            </span>
                         </div>
-                        <ul role="list" class="mb-8 space-y-4 text-left">
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-400 mb-4">Pro</h3>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-bold text-gray-900">€50</span>
+                                <span class="text-gray-500 ml-2">/ maand</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-2">
+                                <span class="line-through">€100</span> met Early Bird korting
+                            </div>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow">
                             <li class="flex items-center space-x-3">
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 <span>Alles uit Starter</span>
                             </li>
                             <li class="flex items-center space-x-3">
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Prioriteit bij opdrachten</span>
+                                <span>Volledige kennisbank toegang</span>
                             </li>
                             <li class="flex items-center space-x-3">
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>1-op-1 mentoring</span>
+                                <span>Toegang tot AI tools</span>
                             </li>
                             <li class="flex items-center space-x-3">
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>AI recruitment tools</span>
+                                <span>Maandelijkse coaching sessie</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Exclusieve opdrachten</span>
                             </li>
                         </ul>
-                        <a href="#" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Word Pro</a>
+                        <a href="early-bird.html" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all duration-200">
+                            Start als Pro
+                        </a>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="bg-white p-8 rounded-2xl border-2 border-gray-100 hover:border-blue-100 transition-all duration-300 hover:shadow-lg relative flex flex-col">
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-400 mb-4">Enterprise</h3>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-bold text-gray-900">€100</span>
+                                <span class="text-gray-500 ml-2">/ maand</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-2">
+                                <span class="line-through">€200</span> met Early Bird korting
+                            </div>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Alles uit Pro</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Wekelijkse 1-op-1 coaching</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Priority support</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Custom branding tools</span>
+                            </li>
+                        </ul>
+                        <a href="early-bird.html" class="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-base font-medium rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-all duration-200">
+                            Start als Enterprise
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Nieuwe FAQ Section -->
-        <section class="bg-gray-50 py-32">
-            <div class="px-6 mx-auto max-w-screen-xl lg:px-8">
-                <div class="max-w-screen-md mx-auto">
-                    <h2 class="mb-8 text-3xl font-bold text-center text-gray-900 sm:text-4xl">
+        <!-- FAQ Section -->
+        <section class="py-24 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
                         Veelgestelde vragen
                     </h2>
-                    <div class="space-y-4">
-                        <!-- FAQ Items met Flowbite Accordion -->
-                        <div class="rounded-lg bg-white p-4">
-                            <!-- FAQ content -->
+                    <div class="space-y-6">
+                        <!-- FAQ Item 1 -->
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                Hoe lang geldt de Early Bird korting?
+                            </h3>
+                            <p class="text-gray-600">
+                                De Early Bird korting is beschikbaar voor de eerste 50 leden die zich aanmelden. Wees er snel bij om te profiteren van 50% korting op je eerste jaar lidmaatschap.
+                            </p>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                Kan ik mijn lidmaatschap upgraden?
+                            </h3>
+                            <p class="text-gray-600">
+                                Ja, je kunt op elk moment je lidmaatschap upgraden naar een hoger plan. Het verschil in prijs wordt dan naar rato berekend.
+                            </p>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                Zit ik vast aan een contract?
+                            </h3>
+                            <p class="text-gray-600">
+                                Nee, je kunt je lidmaatschap maandelijks opzeggen. We geloven in de kwaliteit van onze service en willen je niet vastbinden aan lange contracten.
+                            </p>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                Wat houdt de coaching precies in?
+                            </h3>
+                            <p class="text-gray-600">
+                                De coaching sessies zijn 1-op-1 gesprekken met ervaren recruiters die je helpen met specifieke uitdagingen, strategieën en groeiplannen voor jouw recruitment business.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer Component -->
+        <!-- Footer -->
         <div id="footer"></div>
 
         <!-- Scripts -->
-        <script src="./js/components.js"></script>
+        <script type="module" src="js/components.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     </body>
 </html> 
