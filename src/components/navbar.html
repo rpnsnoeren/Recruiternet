@@ -15,14 +15,14 @@
                 <a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Over Ons</a>
                 <a href="features.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Features</a>
                 <a href="membership.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Lidmaatschap</a>
-                <a href="#contact" class="ml-8 inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm">
+                <a href="contact.html" class="ml-8 inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm">
                     Contact
                 </a>
             </div>
 
             <!-- Mobile Menu Button -->
             <div class="flex items-center md:hidden">
-                <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none">
+                <button @click="$store.navbar.toggle()" type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none">
                     <span class="sr-only">Open menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -33,12 +33,14 @@
     </div>
 
     <!-- Mobile Menu Panel -->
-    <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden">
+    <div x-show="$store.navbar.mobileMenuOpen" 
+         @click.away="$store.navbar.close()" 
+         class="md:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <a href="index.html" class="block px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Over Ons</a>
             <a href="features.html" class="block px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Features</a>
             <a href="membership.html" class="block px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Lidmaatschap</a>
-            <a href="#contact" class="block px-4 py-2 text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contact</a>
+            <a href="contact.html" class="block px-4 py-2 text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contact</a>
         </div>
     </div>
 </nav> 
